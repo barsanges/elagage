@@ -19,7 +19,6 @@ cond1 = Just $ Conditions { hasNone = S.fromList [ Paragraph 2
                           , hasAll = []
                           }
 
-
 cond2 :: Criteria
 cond2 = Just $ Conditions { hasNone = S.empty
                           , hasAll = [ S.fromList [ Paragraph 3
