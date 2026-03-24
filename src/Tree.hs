@@ -46,8 +46,8 @@ raw2tree start arrows deadEnds finals = setRootStatus (go [] start) Solution
     where
       -- go :: [Paragraph] -> Paragraph -> Tree
       go previous current
-        | eval (M.lookup current finals) previous = Leaf current Solution
-        | eval (M.lookup current deadEnds) previous = Leaf current DeadEnd
+        | eval (M.findWithDefault Never current finals) previous = Leaf current Solution
+        | eval (M.findWithDefault Never current deadEnds) previous = Leaf current DeadEnd
         -- On s'arrête dès que le chemin est un cycle : de manière erronée, on
         -- traitera donc comme des culs-de-sac des chemins où, pour aboutir à
         -- la solution, il *faudrait* passer plusieurs fois par les mêmes

@@ -9,7 +9,7 @@ module Paragraph
   ( Paragraph(..)
   , Status(..)
   , Conditions(..)
-  , Criteria
+  , Criteria(..)
   , eval
   ) where
 
@@ -38,27 +38,30 @@ instance Ord Status where
   compare Solution Unknown = GT
   compare Solution Solution = EQ
 
--- | Des conditions de passage pour déterminer le status d'un paragraphe.
+-- | Des conditions de passage pour déterminer le statut d'un paragraphe.
 data Conditions = Conditions { hasNone :: S.Set Paragraph
                                -- ^ Il ne faut passer par aucun de ces paragraphes
                              , hasAll :: [S.Set Paragraph]
                                -- ^ Il faut être passé par au moins un paragraphe de chaque groupe
                              }
 
-type Criteria = Maybe Conditions
+-- | Des critères pour déterminer le statut d'un paragraphe.
+data Criteria = Always
+              | Never
+              | Sometimes Conditions
 
 -- | Indique si l'intersection de deux sets est non vide.
 intersect :: Ord a => S.Set a -> S.Set a -> Bool
 intersect x y = not $ S.disjoint x y
 
 -- | Indique si les critères éventuels sont vérifiés, en évaluant les
--- conditions s'il y en a. Renvoie `False` s'il n'y a pas de critère ;
--- renvoie `True` s'il y a un critère mais que celui n'a pas de
--- condition ; évalue les conditions dans les autres cas.
-eval :: Maybe Criteria -> [Paragraph] -> Bool
-eval Nothing _ = False
-eval (Just Nothing) _ = True
-eval (Just (Just cond)) xs = (and needed) && excluded
+-- conditions s'il y en a. Renvoie `False` si le critère est `Never`,
+-- `True` si le critère est `Always`, et évalue les conditions dans
+-- les autres cas.
+eval :: Criteria -> [Paragraph] -> Bool
+eval Never _ = False
+eval Always _ = True
+eval (Sometimes cond) xs = (and needed) && excluded
   where
     ys = S.fromList xs
     needed = fmap (intersect ys) (hasAll cond)

@@ -35,16 +35,16 @@ arrows = M.fromList [ ( Paragraph 1, [ Paragraph 3
                     ]
 
 deadEnds :: M.Map Paragraph Criteria
-deadEnds = M.fromList [ ( Paragraph 5, Just $ Conditions { hasNone = S.empty
-                                                         , hasAll = [ S.singleton $ Paragraph 6 ]
-                                                         } )
-                      , ( Paragraph 9, Nothing )
+deadEnds = M.fromList [ ( Paragraph 5, Sometimes $ Conditions { hasNone = S.empty
+                                                              , hasAll = [ S.singleton $ Paragraph 6 ]
+                                                              } )
+                      , ( Paragraph 9, Always )
                       ]
 
 solutions :: M.Map Paragraph Criteria
-solutions = M.fromList [ ( Paragraph 7, Just $ Conditions { hasNone = S.empty
-                                                          , hasAll = [ S.fromList [ Paragraph 8 ] ]
-                                                          } )
+solutions = M.fromList [ ( Paragraph 7, Sometimes $ Conditions { hasNone = S.empty
+                                                               , hasAll = [ S.fromList [ Paragraph 8 ] ]
+                                                               } )
                        ]
 
 
