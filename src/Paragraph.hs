@@ -44,11 +44,13 @@ data Conditions = Conditions { hasNone :: S.Set Paragraph
                              , hasAll :: [S.Set Paragraph]
                                -- ^ Il faut être passé par au moins un paragraphe de chaque groupe
                              }
+  deriving (Show, Eq)
 
 -- | Des critères pour déterminer le statut d'un paragraphe.
 data Criteria = Always
               | Never
               | Sometimes Conditions
+  deriving (Show, Eq)
 
 -- | Indique si l'intersection de deux sets est non vide.
 intersect :: Ord a => S.Set a -> S.Set a -> Bool

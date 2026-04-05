@@ -11,8 +11,10 @@ synopsis:            A tool for gamebooks resolution
 description:         Please see the README
 
 dependencies:
+- aeson
 - base
 - containers
+- text
 
 library:
   source-dirs: src
@@ -22,5 +24,5 @@ tests:
     main:                Spec.hs
     source-dirs:         test
     dependencies:
-    - hspec
     - elagage
+    - hspec
