@@ -1,0 +1,16 @@
+{
+    "1":
+    {
+	"correspondances": ["2", "8"],
+	"cul de sac": false,
+	"fin": false,
+	"note": "C'est le premier paragraphe"
+    },
+    "8":
+    {
+	"correspondances": ["4"],
+	"cul de sac": false,
+	"fin": false,
+	"intéressant": true
+    }
+}

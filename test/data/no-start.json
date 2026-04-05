@@ -1,0 +1,14 @@
+{
+    "8":
+    {
+	"correspondances": ["4", "11", "5"],
+	"cul de sac": false,
+	"fin": false
+    },
+    "5":
+    {
+	"correspondances": ["11"],
+	"cul de sac": false,
+	"fin": false
+    }
+}

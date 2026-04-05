@@ -1,0 +1,12 @@
+{
+    "1":
+    {
+	"correspondances": ["2", "8"],
+	"fin": false
+    },
+    "8":
+    {
+	"correspondances": ["4"],
+	"fin": false
+    }
+}
