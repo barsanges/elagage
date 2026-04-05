@@ -31,6 +31,9 @@ data Component = Component { arrows_ :: [Paragraph]
                            }
   deriving (Show, Eq)
 
+-- FIXME : pour une prochaine utilisation d'Aeson, cela vaudrait le coup
+-- d'essayer de parser un `Value` uniquement et de dépiauter ça à la main
+-- plutôt que dans Aeson.
 instance FromJSON Paragraph where
   parseJSON = withText "Paragraph" go
     where
