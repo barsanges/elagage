@@ -16,6 +16,7 @@ import Data.Aeson
 import Data.Aeson.Types ( Parser, prependFailure, typeMismatch )
 import qualified Data.Map as M
 import Data.Maybe ( fromMaybe )
+import qualified Data.Set as S
 import qualified Data.Text as T
 import Text.Read ( readEither )
 
@@ -25,7 +26,7 @@ import Paragraph
 type Raw = M.Map Paragraph Component
 
 -- | Les données connues à date pour un paragraphe du livre.
-data Component = Component { arrows_ :: [Paragraph]
+data Component = Component { arrows_ :: S.Set Paragraph
                            , deadEnd_ :: Criteria
                            , final_ :: Criteria
                            }
@@ -73,7 +74,7 @@ instance FromJSON Component where
   parseJSON = withObject "Component" go
     where
       go v = do
-        arrows <- fmap (fromMaybe []) $ v .:? "correspondances"
+        arrows <- fmap (S.fromList . (fromMaybe [])) $ v .:? "correspondances"
         deadEnd <- fmap (fromMaybe Never) $ v .:? "cul de sac"
         final <- fmap (fromMaybe Never) $ v .:? "fin"
         return Component { arrows_ = arrows

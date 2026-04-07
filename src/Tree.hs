@@ -14,6 +14,7 @@ module Tree
   ) where
 
 import qualified Data.Map as M
+import qualified Data.Set as S
 
 import Paragraph
 import Raw
@@ -60,6 +61,6 @@ raw2tree raw = setRootStatus (go [] (Paragraph 1)) Solution
           | null neighbors = Leaf current DeadEnd
           | otherwise = Branch current status subtrees
         where
-          neighbors = arrows_ comp
+          neighbors = S.toList (arrows_ comp)
           subtrees = fmap (go (current:previous)) neighbors
           status = maximum $ fmap getRootStatus subtrees

@@ -17,7 +17,7 @@ spec :: Spec
 spec = do
   describe "raw2tree" $ do
     it "should turn raw data into a tree (1)" $
-      (raw2tree (M.fromList [ ( Paragraph 1, Component { arrows_ = []
+      (raw2tree (M.fromList [ ( Paragraph 1, Component { arrows_ = S.fromList []
                                                        , deadEnd_ = Never
                                                        , final_ = Always
                                                        }
@@ -25,45 +25,45 @@ spec = do
                             ] ) ) `shouldBe` (Leaf (Paragraph 1) Solution)
 
     it "should turn raw data into a tree (2)" $
-      (raw2tree (M.fromList [ ( Paragraph 1, Component { arrows_ = [ Paragraph 3
-                                                                   , Paragraph 4
-                                                                   , Paragraph 8
-                                                                   , Paragraph 9
-                                                                   ]
+      (raw2tree (M.fromList [ ( Paragraph 1, Component { arrows_ = S.fromList [ Paragraph 3
+                                                                              , Paragraph 4
+                                                                              , Paragraph 8
+                                                                              , Paragraph 9
+                                                                              ]
                                                        , deadEnd_ = Never
                                                        , final_ = Never
                                                        } )
-                            , ( Paragraph 2, Component { arrows_ = [ Paragraph 10 ]
+                            , ( Paragraph 2, Component { arrows_ = S.fromList [ Paragraph 10 ]
                                                        , deadEnd_ = Never
                                                        , final_ = Never
                                                        } )
-                            , ( Paragraph 4, Component { arrows_ = [ Paragraph 5
-                                                                   , Paragraph 7
-                                                                   ]
+                            , ( Paragraph 4, Component { arrows_ = S.fromList [ Paragraph 5
+                                                                              , Paragraph 7
+                                                                              ]
                                                        , deadEnd_ = Never
                                                        , final_ = Never
                                                        } )
-                            , ( Paragraph 5, Component { arrows_ = [ Paragraph 7 ]
+                            , ( Paragraph 5, Component { arrows_ = S.fromList [ Paragraph 7 ]
                                                        , deadEnd_ = Never
                                                        , final_ = Never
                                                        } )
-                            , ( Paragraph 6, Component { arrows_ = [ Paragraph 5 ]
+                            , ( Paragraph 6, Component { arrows_ = S.fromList [ Paragraph 5 ]
                                                        , deadEnd_ = Never
                                                        , final_ = Never
                                                        } )
-                            , ( Paragraph 8, Component { arrows_ = [ Paragraph 5
-                                                                   , Paragraph 6
-                                                                   ]
+                            , ( Paragraph 8, Component { arrows_ = S.fromList [ Paragraph 5
+                                                                              , Paragraph 6
+                                                                              ]
                                                        , deadEnd_ = Never
                                                        , final_ = Never
                                                        } )
-                            , ( Paragraph 9, Component { arrows_ = [ Paragraph 2
-                                                                   , Paragraph 3
-                                                                   ]
+                            , ( Paragraph 9, Component { arrows_ = S.fromList [ Paragraph 2
+                                                                              , Paragraph 3
+                                                                              ]
                                                        , deadEnd_ = Never
                                                        , final_ = Never
                                                        } )
-                            , ( Paragraph 10, Component { arrows_ = [ Paragraph 2 ]
+                            , ( Paragraph 10, Component { arrows_ = S.fromList [ Paragraph 2 ]
                                                         , deadEnd_ = Never
                                                         , final_ = Never
                                                         } )
@@ -92,47 +92,47 @@ spec = do
                                                ] )
 
     it "should turn raw data into a tree (3)" $
-      (raw2tree (M.fromList [ ( Paragraph 1, Component { arrows_ = [ Paragraph 3
-                                                                   , Paragraph 4
-                                                                   , Paragraph 8
-                                                                   , Paragraph 9
-                                                                   ]
+      (raw2tree (M.fromList [ ( Paragraph 1, Component { arrows_ = S.fromList [ Paragraph 3
+                                                                              , Paragraph 4
+                                                                              , Paragraph 8
+                                                                              , Paragraph 9
+                                                                              ]
                                                        , deadEnd_ = Never
                                                        , final_ = Never
                                                        } )
-                            , ( Paragraph 2, Component { arrows_ = [ Paragraph 10 ]
+                            , ( Paragraph 2, Component { arrows_ = S.fromList [ Paragraph 10 ]
                                                        , deadEnd_ = Never
                                                        , final_ = Never
                                                        } )
-                            , ( Paragraph 4, Component { arrows_ = [ Paragraph 5
-                                                                   , Paragraph 7
-                                                                   ]
+                            , ( Paragraph 4, Component { arrows_ = S.fromList [ Paragraph 5
+                                                                              , Paragraph 7
+                                                                              ]
                                                        , deadEnd_ = Never
                                                        , final_ = Never
                                                        } )
-                            , ( Paragraph 5, Component { arrows_ = [ Paragraph 7 ]
+                            , ( Paragraph 5, Component { arrows_ = S.fromList [ Paragraph 7 ]
                                                        , deadEnd_ = Sometimes $ Conditions { hasNone = S.empty
                                                                                            , hasAll = [ S.singleton $ Paragraph 6 ]
                                                                                            }
                                                        , final_ = Never
                                                        } )
-                            , ( Paragraph 6, Component { arrows_ = [ Paragraph 5 ]
+                            , ( Paragraph 6, Component { arrows_ = S.fromList [ Paragraph 5 ]
                                                        , deadEnd_ = Never
                                                        , final_ = Never
                                                        } )
-                            , ( Paragraph 8, Component { arrows_ = [ Paragraph 5
-                                                                   , Paragraph 6
-                                                                   ]
+                            , ( Paragraph 8, Component { arrows_ = S.fromList [ Paragraph 5
+                                                                              , Paragraph 6
+                                                                              ]
                                                        , deadEnd_ = Never
                                                        , final_ = Never
                                                        } )
-                            , ( Paragraph 9, Component { arrows_ = [ Paragraph 2
-                                                                   , Paragraph 3
-                                                                   ]
+                            , ( Paragraph 9, Component { arrows_ = S.fromList [ Paragraph 2
+                                                                              , Paragraph 3
+                                                                              ]
                                                        , deadEnd_ = Always
                                                        , final_ = Never
                                                        } )
-                            , ( Paragraph 10, Component { arrows_ = [ Paragraph 2 ]
+                            , ( Paragraph 10, Component { arrows_ = S.fromList [ Paragraph 2 ]
                                                         , deadEnd_ = Never
                                                         , final_ = Never
                                                         } )
@@ -153,51 +153,51 @@ spec = do
                                                ] )
 
     it "should turn raw data into a tree (4)" $
-      (raw2tree (M.fromList [ ( Paragraph 1, Component { arrows_ = [ Paragraph 3
-                                                                   , Paragraph 4
-                                                                   , Paragraph 8
-                                                                   , Paragraph 9
-                                                                   ]
+      (raw2tree (M.fromList [ ( Paragraph 1, Component { arrows_ = S.fromList [ Paragraph 3
+                                                                              , Paragraph 4
+                                                                              , Paragraph 8
+                                                                              , Paragraph 9
+                                                                              ]
                                                        , deadEnd_ = Never
                                                        , final_ = Never
                                                        } )
-                            , ( Paragraph 2, Component { arrows_ = [ Paragraph 10 ]
+                            , ( Paragraph 2, Component { arrows_ = S.fromList [ Paragraph 10 ]
                                                        , deadEnd_ = Never
                                                        , final_ = Never
                                                        } )
-                            , ( Paragraph 4, Component { arrows_ = [ Paragraph 5
-                                                                   , Paragraph 7
-                                                                   ]
+                            , ( Paragraph 4, Component { arrows_ = S.fromList [ Paragraph 5
+                                                                              , Paragraph 7
+                                                                              ]
                                                        , deadEnd_ = Never
                                                        , final_ = Never
                                                        } )
-                            , ( Paragraph 5, Component { arrows_ = [ Paragraph 7 ]
+                            , ( Paragraph 5, Component { arrows_ = S.fromList [ Paragraph 7 ]
                                                        , deadEnd_ = Never
                                                        , final_ = Never
                                                        } )
-                            , ( Paragraph 6, Component { arrows_ = [ Paragraph 5 ]
+                            , ( Paragraph 6, Component { arrows_ = S.fromList [ Paragraph 5 ]
                                                        , deadEnd_ = Never
                                                        , final_ = Never
                                                        } )
-                            , ( Paragraph 7, Component { arrows_ = []
+                            , ( Paragraph 7, Component { arrows_ = S.fromList []
                                                        , deadEnd_ = Never
                                                        , final_ = Sometimes $ Conditions { hasNone = S.empty
                                                                                          , hasAll = [ S.fromList [ Paragraph 8 ] ]
                                                                                          }
                                                        } )
-                            , ( Paragraph 8, Component { arrows_ = [ Paragraph 5
-                                                                   , Paragraph 6
-                                                                   ]
+                            , ( Paragraph 8, Component { arrows_ = S.fromList [ Paragraph 5
+                                                                              , Paragraph 6
+                                                                              ]
                                                        , deadEnd_ = Never
                                                        , final_ = Never
                                                        } )
-                            , ( Paragraph 9, Component { arrows_ = [ Paragraph 2
-                                                                   , Paragraph 3
-                                                                   ]
+                            , ( Paragraph 9, Component { arrows_ = S.fromList [ Paragraph 2
+                                                                              , Paragraph 3
+                                                                              ]
                                                        , deadEnd_ = Never
                                                        , final_ = Never
                                                        } )
-                            , ( Paragraph 10, Component { arrows_ = [ Paragraph 2 ]
+                            , ( Paragraph 10, Component { arrows_ = S.fromList [ Paragraph 2 ]
                                                         , deadEnd_ = Never
                                                         , final_ = Never
                                                         } )
@@ -226,53 +226,53 @@ spec = do
                                                ] )
 
     it "should turn raw data into a tree (5)" $
-      (raw2tree (M.fromList [ ( Paragraph 1, Component { arrows_ = [ Paragraph 3
-                                                                   , Paragraph 4
-                                                                   , Paragraph 8
-                                                                   , Paragraph 9
-                                                                   ]
+      (raw2tree (M.fromList [ ( Paragraph 1, Component { arrows_ = S.fromList [ Paragraph 3
+                                                                              , Paragraph 4
+                                                                              , Paragraph 8
+                                                                              , Paragraph 9
+                                                                              ]
                                                        , deadEnd_ = Never
                                                        , final_ = Never
                                                        } )
-                            , ( Paragraph 2, Component { arrows_ = [ Paragraph 10 ]
+                            , ( Paragraph 2, Component { arrows_ = S.fromList [ Paragraph 10 ]
                                                        , deadEnd_ = Never
                                                        , final_ = Never
                                                        } )
-                            , ( Paragraph 4, Component { arrows_ = [ Paragraph 5
-                                                                   , Paragraph 7
-                                                                   ]
+                            , ( Paragraph 4, Component { arrows_ = S.fromList [ Paragraph 5
+                                                                              , Paragraph 7
+                                                                              ]
                                                        , deadEnd_ = Never
                                                        , final_ = Never
                                                        } )
-                            , ( Paragraph 5, Component { arrows_ = [ Paragraph 7 ]
+                            , ( Paragraph 5, Component { arrows_ = S.fromList [ Paragraph 7 ]
                                                        , deadEnd_ = Sometimes $ Conditions { hasNone = S.empty
                                                                                            , hasAll = [ S.singleton $ Paragraph 6 ]
                                                                                            }
                                                        , final_ = Never
                                                        } )
-                            , ( Paragraph 6, Component { arrows_ = [ Paragraph 5 ]
+                            , ( Paragraph 6, Component { arrows_ = S.fromList [ Paragraph 5 ]
                                                        , deadEnd_ = Never
                                                        , final_ = Never
                                                        } )
-                            , ( Paragraph 7, Component { arrows_ = []
+                            , ( Paragraph 7, Component { arrows_ = S.fromList []
                                                        , deadEnd_ = Never
                                                        , final_ = Sometimes $ Conditions { hasNone = S.empty
                                                                                          , hasAll = [ S.fromList [ Paragraph 8 ] ]
                                                                                          }
                                                        } )
-                            , ( Paragraph 8, Component { arrows_ = [ Paragraph 5
-                                                                   , Paragraph 6
-                                                                   ]
+                            , ( Paragraph 8, Component { arrows_ = S.fromList [ Paragraph 5
+                                                                              , Paragraph 6
+                                                                              ]
                                                        , deadEnd_ = Never
                                                        , final_ = Never
                                                        } )
-                            , ( Paragraph 9, Component { arrows_ = [ Paragraph 2
-                                                                   , Paragraph 3
-                                                                   ]
+                            , ( Paragraph 9, Component { arrows_ = S.fromList [ Paragraph 2
+                                                                              , Paragraph 3
+                                                                              ]
                                                        , deadEnd_ = Always
                                                        , final_ = Never
                                                        } )
-                            , ( Paragraph 10, Component { arrows_ = [ Paragraph 2 ]
+                            , ( Paragraph 10, Component { arrows_ = S.fromList [ Paragraph 2 ]
                                                         , deadEnd_ = Never
                                                         , final_ = Never
                                                         } )
@@ -293,7 +293,7 @@ spec = do
                                                ] )
 
     it "should turn raw data into a tree (6)" $
-      (raw2tree (M.fromList [ ( Paragraph 7, Component { arrows_ = []
+      (raw2tree (M.fromList [ ( Paragraph 7, Component { arrows_ = S.fromList []
                                                        , deadEnd_ = Never
                                                        , final_ = Always
                                                        }

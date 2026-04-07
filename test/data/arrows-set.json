@@ -1,0 +1,31 @@
+{
+    "1":
+    {
+	"correspondances": ["2", "8", "8"],
+	"cul de sac": false,
+	"fin": false
+    },
+    "8":
+    {
+	"correspondances": ["4", "4"],
+	"cul de sac":
+	{
+	    "noeuds inhibiteurs": ["12", "14", "5"],
+	    "noeuds déclencheurs":
+	    [
+		["17", "6", "9"]
+	    ]
+	},
+	"fin": false
+    },
+    "2":
+    {
+	"correspondances": ["11", "6", "11", "6"],
+	"cul de sac": false,
+	"fin":
+	{
+	    "noeuds inhibiteurs": ["5", "19"],
+	    "noeuds déclencheurs": []
+	}
+    }
+}
