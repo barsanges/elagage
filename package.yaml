@@ -19,6 +19,15 @@ dependencies:
 library:
   source-dirs: src
 
+executables:
+  elagage:
+    source-dirs:     app
+    main:            Main.hs
+    dependencies:
+    - bytestring
+    - optparse-applicative
+    - elagage
+
 tests:
   elagage-test:
     main:                Spec.hs

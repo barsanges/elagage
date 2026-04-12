@@ -33,6 +33,22 @@ library
     , text
   default-language: Haskell2010
 
+executable elagage
+  main-is: Main.hs
+  other-modules:
+      Paths_elagage
+  hs-source-dirs:
+      app
+  build-depends:
+      aeson
+    , base
+    , bytestring
+    , containers
+    , elagage
+    , optparse-applicative
+    , text
+  default-language: Haskell2010
+
 test-suite elagage-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
