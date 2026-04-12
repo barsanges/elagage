@@ -7,8 +7,8 @@ permettent pas de gagner.
 ## Mermaid
 
 Le programme produit une chaîne de caractères exploitable par
-(Mermaid)[https://mermaid.js.org/]. En envoyant le résultat vers
-(mermaid-cli)[https://github.com/mermaid-js/mermaid-cli], on peut donc
+[Mermaid](https://mermaid.js.org/). En envoyant le résultat vers
+[mermaid-cli](https://github.com/mermaid-js/mermaid-cli), on peut donc
 facilement produire un diagramme PDF, par exemple avec une commande du
 type :
 
