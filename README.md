@@ -4,6 +4,20 @@ Pour un *livre dont vous êtes le héros* en cours de résolution, cet
 outil permet d'identifier les branches déjà explorées qui ne
 permettent pas de gagner.
 
+## Mermaid
+
+Le programme produit une chaîne de caractères exploitable par
+(Mermaid)[https://mermaid.js.org/]. En envoyant le résultat vers
+(mermaid-cli)[https://github.com/mermaid-js/mermaid-cli], on peut donc
+facilement produire un diagramme PDF, par exemple avec une commande du
+type :
+
+```bash
+elagage -i input.json | mmdc -i - -o output.pdf
+```
+
+Sous Ubuntu, mermaid-cli peut notamment être installé via snap.
+
 ## Format des fichiers d'entrée
 
 Le programme manipule un fichier décrivant (potentiellement de manière
