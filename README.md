@@ -42,7 +42,7 @@ paragraphe et les valeurs des objets ayant 3 champs, tous optionnels :
 	* si c'est un objet, il doit avoir un champ `"noeuds
       inhibiteurs"`, qui contient une liste de numéros de paragraphes,
       et un champ `"noeuds déclencheurs"`, qui contient une liste de
-      liste de numéros de paragraphes. Le paragraphe est alors un cul
+      listes de numéros de paragraphes. Le paragraphe est alors un cul
       de sac si et seulement si le joueur est passé par au moins un
       paragraphe de chaque liste de `"noeuds déclencheurs"`, et par
       aucun paragraphe de la liste de `"noeuds inhibiteurs"`. Si un
@@ -62,7 +62,7 @@ paragraphe et les valeurs des objets ayant 3 champs, tous optionnels :
 	* si c'est un objet, il doit avoir un champ `"noeuds
       inhibiteurs"`, qui contient une liste de numéros de paragraphes,
       et un champ `"noeuds déclencheurs"`, qui contient une liste de
-      liste de numéros de paragraphes. Le paragraphe est alors un
+      listes de numéros de paragraphes. Le paragraphe est alors un
       paragraphe de fin victorieuse si et seulement si le joueur est
       passé par au moins un paragraphe de chaque liste de `"noeuds
       déclencheurs"`, et par aucun paragraphe de la liste de `"noeuds
