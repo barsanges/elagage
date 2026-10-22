@@ -23,18 +23,27 @@ newtype Paragraph = Paragraph Int
 data Status = Solution
             | Unknown
             | DeadEnd
+            | Unexplored
   deriving (Show, Eq)
 
 instance Ord Status where
   compare DeadEnd DeadEnd = EQ
+  compare DeadEnd Unexplored = LT
   compare DeadEnd Unknown = LT
   compare DeadEnd Solution = LT
 
+  compare Unexplored DeadEnd = GT
+  compare Unexplored Unexplored = EQ
+  compare Unexplored Unknown = LT
+  compare Unexplored Solution = LT
+
   compare Unknown DeadEnd = GT
+  compare Unknown Unexplored = GT
   compare Unknown Unknown = EQ
   compare Unknown Solution = LT
 
   compare Solution DeadEnd = GT
+  compare Solution Unexplored = GT
   compare Solution Unknown = GT
   compare Solution Solution = EQ
 

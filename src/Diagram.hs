@@ -24,6 +24,7 @@ graph2mermaid graph = if M.null (vertices_ graph)
     preamble = [ "  classDef solution fill:#008000,color:#ffffff,stroke:#000000"
                , "  classDef unknown fill:#DCDCDC,stroke:#000000"
                , "  classDef deadEnd fill:#CD5C5C,color:#ffffff,stroke:#000000"
+               , "  classDef unexplored fill:#ffff00,color:#ffffff,stroke:#000000"
                , "flowchart TD"
                ]
     (result, _) = M.foldlWithKey' go1 (preamble, S.empty) (vertices_ graph)
@@ -47,5 +48,6 @@ graph2mermaid graph = if M.null (vertices_ graph)
                          Solution -> ("  n" ++ (show p) ++ "[" ++ (show p) ++ "]:::solution"):text
                          Unknown -> ("  n" ++ (show p) ++ "(" ++ (show p) ++ "):::unknown"):text
                          DeadEnd -> ("  n" ++ (show p) ++ "[" ++ (show p) ++ "]:::deadEnd"):text
+                         Unexplored -> ("  n" ++ (show p) ++ "[" ++ (show p) ++ "]:::unexplored"):text
                        Nothing -> ("  n" ++ (show p) ++ "(" ++ (show p) ++ "):::unknown"):text
         seen' = S.insert p seen

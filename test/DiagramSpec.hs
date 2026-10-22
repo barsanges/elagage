@@ -34,6 +34,7 @@ spec = do
                                                                                  ] )
                                                      ]
                             })) `shouldBe` "flowchart TD\n\
+                                           \  classDef unexplored fill:#ffff00,color:#ffffff,stroke:#000000\n\
                                            \  classDef deadEnd fill:#CD5C5C,color:#ffffff,stroke:#000000\n\
                                            \  classDef unknown fill:#DCDCDC,stroke:#000000\n\
                                            \  classDef solution fill:#008000,color:#ffffff,stroke:#000000\n\
@@ -68,6 +69,7 @@ spec = do
                                                                                  ] )
                                                      ]
                             })) `shouldBe` "flowchart TD\n\
+                                           \  classDef unexplored fill:#ffff00,color:#ffffff,stroke:#000000\n\
                                            \  classDef deadEnd fill:#CD5C5C,color:#ffffff,stroke:#000000\n\
                                            \  classDef unknown fill:#DCDCDC,stroke:#000000\n\
                                            \  classDef solution fill:#008000,color:#ffffff,stroke:#000000\n\
@@ -95,6 +97,7 @@ spec = do
                                                                                  ] )
                                                      ]
                             })) `shouldBe` "flowchart TD\n\
+                                           \  classDef unexplored fill:#ffff00,color:#ffffff,stroke:#000000\n\
                                            \  classDef deadEnd fill:#CD5C5C,color:#ffffff,stroke:#000000\n\
                                            \  classDef unknown fill:#DCDCDC,stroke:#000000\n\
                                            \  classDef solution fill:#008000,color:#ffffff,stroke:#000000\n\
@@ -120,6 +123,7 @@ spec = do
                                                                                  ] )
                                                      ]
                             })) `shouldBe` "flowchart TD\n\
+                                           \  classDef unexplored fill:#ffff00,color:#ffffff,stroke:#000000\n\
                                            \  classDef deadEnd fill:#CD5C5C,color:#ffffff,stroke:#000000\n\
                                            \  classDef unknown fill:#DCDCDC,stroke:#000000\n\
                                            \  classDef solution fill:#008000,color:#ffffff,stroke:#000000\n\
