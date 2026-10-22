@@ -299,3 +299,63 @@ spec = do
                                                        }
                               )
                             ] ) ) `shouldBe` (Leaf (Paragraph 1) Solution)
+
+    it "should handle cycles gracefully (1)" $
+      (raw2tree (M.fromList [ ( Paragraph 1, Component { arrows_ = S.fromList [ Paragraph 2 ]
+                                                       , deadEnd_ = Never
+                                                       , final_ = Never
+                                                       } )
+                            , ( Paragraph 2, Component { arrows_ = S.fromList [ Paragraph 3 ]
+                                                       , deadEnd_ = Never
+                                                       , final_ = Never
+                                                       } )
+                            , ( Paragraph 3, Component { arrows_ = S.fromList [ Paragraph 2 ]
+                                                       , deadEnd_ = Never
+                                                       , final_ = Never
+                                                       } )
+                            ] ) ) `shouldBe` ( Branch (Paragraph 1) Solution
+                                               [ Branch (Paragraph 2) DeadEnd
+                                                 [ Branch (Paragraph 3) DeadEnd
+                                                   [ Leaf (Paragraph 2) DeadEnd ]
+                                                 ]
+                                               ] )
+
+    it "should handle cycles gracefully (2)" $
+      (raw2tree (M.fromList [ ( Paragraph 1, Component { arrows_ = S.fromList [ Paragraph 2
+                                                                              , Paragraph 6
+                                                                              ]
+                                                       , deadEnd_ = Never
+                                                       , final_ = Never
+                                                       } )
+                            , ( Paragraph 2, Component { arrows_ = S.fromList [ Paragraph 3 ]
+                                                       , deadEnd_ = Never
+                                                       , final_ = Never
+                                                       } )
+                            , ( Paragraph 3, Component { arrows_ = S.fromList [ Paragraph 4
+                                                                              , Paragraph 5
+                                                                              ]
+                                                       , deadEnd_ = Never
+                                                       , final_ = Never
+                                                       } )
+                            , ( Paragraph 4, Component { arrows_ = S.fromList [ Paragraph 5 ]
+                                                       , deadEnd_ = Never
+                                                       , final_ = Never
+                                                       } )
+                            , ( Paragraph 5, Component { arrows_ = S.fromList [ Paragraph 2 ]
+                                                       , deadEnd_ = Never
+                                                       , final_ = Never
+                                                       } )
+                            ] ) ) `shouldBe` ( Branch (Paragraph 1) Solution
+                                               [ Branch (Paragraph 2) DeadEnd
+                                                 [ Branch (Paragraph 3) DeadEnd
+                                                   [ Branch (Paragraph 4) DeadEnd
+                                                     [ Branch (Paragraph 5) DeadEnd
+                                                       [Leaf (Paragraph 2) DeadEnd ]
+                                                     ]
+                                                   , Branch (Paragraph 5) DeadEnd
+                                                     [ Leaf (Paragraph 2) DeadEnd ]
+                                                   ]
+                                                 ]
+                                               , Leaf (Paragraph 6) Unknown
+                                               ]
+                                             )
