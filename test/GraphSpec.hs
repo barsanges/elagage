@@ -415,10 +415,10 @@ spec = do
                                                                              ]
                                                     }
 
-    it "should turn raw data into a graph (6)" $
+    it "should create a graph that always starts with the paragraph '1'" $
       (raw2graph (M.fromList [ ( Paragraph 7, Component { arrows_ = S.fromList []
-                                                        , deadEnd_ = Never
-                                                        , final_ = Always
+                                                        , deadEnd_ = Always
+                                                        , final_ = Never
                                                         }
                                )
                              ] ) ) `shouldBe` Graph { nodes_ = M.fromList [ (Paragraph 1, Solution) ]
