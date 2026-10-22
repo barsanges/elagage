@@ -8,6 +8,7 @@ Le livre représenté sous la forme d'un graphe orienté.
 module Graph
   ( module Tree
   , Graph(..)
+  , raw2graph
   , tree2graph
   ) where
 
@@ -33,6 +34,12 @@ updateNode x status graph = graph { nodes_ = M.insertWith max x status $ nodes_ 
 -- | Met à jour (si nécessaire) les liens entre les noeuds du graphe.
 updateVertices :: Paragraph -> Paragraph -> Graph -> Graph
 updateVertices x y graph = graph { vertices_ = M.insertWith S.union x (S.singleton y) $ vertices_ graph }
+
+
+-- | Met la partie explorée du livre sous forme d'un graphe orienté. Le
+-- premier paragraphe a le numéro 1.
+raw2graph :: Raw -> Graph
+raw2graph = tree2graph . raw2tree -- FIXME : temporaire
 
 -- | Convertit un arbre non recombinant en un graphe orienté.
 tree2graph :: Tree -> Graph
