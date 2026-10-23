@@ -13,7 +13,6 @@ module Graph
   ) where
 
 import qualified Data.Map as M
-import Data.Maybe ( catMaybes )
 import qualified Data.Set as S
 
 import Paragraph
@@ -78,19 +77,41 @@ tagUnexplored graph = foldr go graph unexplored
 -- | Renvoie l'ensemble des descendants (i.e. : à toutes les générations) de
 -- chaque noeud du graphe.
 findAllDescendants :: WorkingGraph -> M.Map Paragraph (S.Set Paragraph)
-findAllDescendants wgraph = snd (foldl' go (S.empty, M.empty) allVertices)
+findAllDescendants wgraph = M.fromList [(p, go S.empty (sons p)) | p <- allVertices]
   where
     allVertices = M.keys (vertices_ wgraph)
 
-    -- go :: (S.Set Paragraph, M.Map Paragraph (S.Set Paragraph)) -> Paragraph -> (S.Set Paragraph, M.Map Paragraph (S.Set Paragraph))
-    go (processed, results) p
-      | M.member p results = (processed, results)
-      | S.member p processed = (processed, results)
-      | otherwise = (processed, M.insert p allDescendants results)
-            where
-              descendants = M.findWithDefault S.empty p (descendants_ wgraph)
-              (_, results') = S.foldl' go (S.insert p processed, results) descendants
-              allDescendants = S.unions (catMaybes [M.lookup q results' | q <- (S.toList descendants)])
+    -- sons :: Paragraph -> S.Set Paragraph
+    sons p = M.findWithDefault S.empty p (descendants_ wgraph)
+
+    -- go :: S.Set Paragraph -> S.Set Paragraph -> S.Set Paragraph
+    go old current = if S.null new
+                     then current
+                     else go current newest
+      where
+       new = S.difference current old
+       newest = S.union current (S.unions (fmap sons (S.toList new)))
+
+-- | Marque comme culs-de-sac les noeuds qui ne permettent pas
+-- d'atteindre un noeud non exploré.
+tagObviousDeadEnd :: WorkingGraph -> WorkingGraph
+tagObviousDeadEnd wgraph = wgraph { vertices_ = vertices' }
+  where
+    allDescendants = findAllDescendants wgraph
+    vertices' = M.foldrWithKey go (vertices_ wgraph) allDescendants
+
+    -- go :: Paragraph -> S.Set Paragraph -> M.Map Paragraph Status -> M.Map Paragraph Status
+    go p descendants vertices = case M.lookup p vertices of
+                                  Just Unknown -> if S.null (S.filter isUnexplored descendants)
+                                                  then M.insert p DeadEnd vertices
+                                                  else vertices
+                                  _ -> vertices
+      where
+        -- FIXME : il faudrait aussi chercher s'il y a des noeuds de fin !
+        -- isUnexplored :: Paragraph -> Bool
+        isUnexplored q = case M.lookup q vertices of
+          Just Unexplored -> True
+          _ -> False
 
 -- | Met la partie explorée du livre sous forme d'un graphe orienté. Le
 -- premier paragraphe a le numéro 1.
@@ -99,4 +120,4 @@ raw2graph raw = Graph { nodes_ = vertices_ wgraph
                       , edges_ = descendants_ wgraph
                       }
   where
-    wgraph = (tagUnexplored . initializeGraph) raw
+    wgraph = (tagObviousDeadEnd . tagUnexplored . initializeGraph) raw
