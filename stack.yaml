@@ -1,0 +1,5 @@
+resolver: lts-24.64
+packages:
+- .
+ghc-options:
+    "$locals": -O2 -Wall

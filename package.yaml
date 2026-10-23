@@ -1,0 +1,30 @@
+name:                elagage
+version:             0.2.0
+author:              barsanges
+maintainer:          https://github.com/barsanges
+copyright:           2026 barsanges
+
+extra-source-files:
+- README.md
+
+synopsis:            A tool for gamebooks resolution
+description:         Please see the README
+
+dependencies:
+- aeson
+- base
+- containers
+- text
+- vector
+
+library:
+  source-dirs: src
+
+executables:
+  elagage:
+    source-dirs:     app
+    main:            Main.hs
+    dependencies:
+    - bytestring
+    - optparse-applicative
+    - elagage

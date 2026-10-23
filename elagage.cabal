@@ -1,0 +1,51 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.39.1.
+--
+-- see: https://github.com/sol/hpack
+
+name:           elagage
+version:        0.2.0
+synopsis:       A tool for gamebooks resolution
+description:    Please see the README
+author:         barsanges
+maintainer:     https://github.com/barsanges
+copyright:      2026 barsanges
+build-type:     Simple
+extra-source-files:
+    README.md
+
+library
+  exposed-modules:
+      Diagram
+      Graph
+      Paragraph
+      Raw
+  other-modules:
+      Paths_elagage
+  hs-source-dirs:
+      src
+  build-depends:
+      aeson
+    , base
+    , containers
+    , text
+    , vector
+  default-language: Haskell2010
+
+executable elagage
+  main-is: Main.hs
+  other-modules:
+      Paths_elagage
+  hs-source-dirs:
+      app
+  build-depends:
+      aeson
+    , base
+    , bytestring
+    , containers
+    , elagage
+    , optparse-applicative
+    , text
+    , vector
+  default-language: Haskell2010
