@@ -13,7 +13,7 @@ facilement produire un diagramme PDF, par exemple avec une commande du
 type :
 
 ```bash
-elagage -i input.json | mmdc -i - -o output.pdf --pdfFit
+elagage -i input.json | mmdc -i - -o output.pdf --pdfFit --configFile mermaid.config.json
 ```
 
 Sous Ubuntu, mermaid-cli peut notamment être installé via snap.
