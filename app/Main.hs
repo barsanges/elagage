@@ -10,6 +10,7 @@ module Main where
 import Data.Aeson
 import qualified Data.ByteString as BS
 import Options.Applicative
+import System.Exit ( die )
 
 import Diagram
 
@@ -61,7 +62,7 @@ main = do
             StdIn -> fmap eitherDecodeStrict BS.getContents
   let mraw = content >>= json2raw
   case mraw of
-    Left msg -> putStrLn msg
+    Left msg -> die msg
     Right raw -> let res = (graph2mermaid . raw2graph) raw
                  in case output cli of
                       OutputFile f -> writeFile f res
