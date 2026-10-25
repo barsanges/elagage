@@ -94,8 +94,8 @@ findAllDescendants wgraph = M.fromList [(p, go S.empty (sons p)) | p <- allVerti
 
 -- | Marque comme culs-de-sac les noeuds qui ne permettent pas
 -- d'atteindre un noeud non exploré.
-tagObviousDeadEnd :: WorkingGraph -> WorkingGraph
-tagObviousDeadEnd wgraph = wgraph { vertices_ = vertices' }
+tagObviousDeadEnds :: WorkingGraph -> WorkingGraph
+tagObviousDeadEnds wgraph = wgraph { vertices_ = vertices' }
   where
     allDescendants = findAllDescendants wgraph
     vertices' = M.foldrWithKey go (vertices_ wgraph) allDescendants
@@ -120,4 +120,4 @@ raw2graph raw = Graph { nodes_ = vertices_ wgraph
                       , edges_ = descendants_ wgraph
                       }
   where
-    wgraph = (tagObviousDeadEnd . tagUnexplored . initializeGraph) raw
+    wgraph = (tagObviousDeadEnds . tagUnexplored . initializeGraph) raw
