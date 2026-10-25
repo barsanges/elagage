@@ -41,13 +41,16 @@ empty = WorkingGraph { vertices_ = M.empty
 -- | Ajoute un sommet au graphe.
 addVertex :: Paragraph -> Status -> S.Set Paragraph -> WorkingGraph -> WorkingGraph
 addVertex p status arrows graph = WorkingGraph { vertices_ = vertices'
-                                               , ancestors_ = ancestors'
+                                               , ancestors_ = ancestors''
                                                , descendants_ = descendants'
                                                }
   where
     vertices' = M.insert p status (vertices_ graph)
     descendants' = M.insert p arrows (descendants_ graph)
     ancestors' = S.foldr go (ancestors_ graph) arrows
+    ancestors'' = if M.member p ancestors'
+                  then ancestors'
+                  else M.insert p S.empty ancestors'
 
     -- go :: Paragraph -> M.Map Paragraph (S.Set Paragraph) -> M.Map Paragraph (S.Set Paragraph)
     go q ancestorsMap = case M.lookup q ancestorsMap of
@@ -113,6 +116,18 @@ tagObviousDeadEnds wgraph = wgraph { vertices_ = vertices' }
           Just Unexplored -> True
           _ -> False
 
+-- | Marque comme solutions tous les noeuds de déart (i.e. des noeuds
+-- inatteignables par un autre noeud).
+tagBeginnings :: WorkingGraph -> WorkingGraph
+tagBeginnings wgraph = wgraph { vertices_ = vertices' }
+  where
+    vertices' = M.foldrWithKey go (vertices_ wgraph) (ancestors_ wgraph)
+
+    -- go :: Paragraph -> S.Set Paragraph -> M.Map Paragraph Status -> M.Map Paragraph Status
+    go p ancestors vertices = if S.null ancestors
+                              then M.insert p Solution vertices
+                              else vertices
+
 -- | Met la partie explorée du livre sous forme d'un graphe orienté. Le
 -- premier paragraphe a le numéro 1.
 raw2graph :: Raw -> Graph
@@ -120,4 +135,4 @@ raw2graph raw = Graph { nodes_ = vertices_ wgraph
                       , edges_ = descendants_ wgraph
                       }
   where
-    wgraph = (tagObviousDeadEnds . tagUnexplored . initializeGraph) raw
+    wgraph = (tagBeginnings . tagObviousDeadEnds . tagUnexplored . initializeGraph) raw
