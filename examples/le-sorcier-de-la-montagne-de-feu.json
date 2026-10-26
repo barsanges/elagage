@@ -487,10 +487,6 @@
     {
         "correspondances": ["67", "267"]
     },
-    "77":
-    {
-        "correspondances": ["267", "177"]
-    },
     "79":
     {
         "correspondances": ["137", "267"]
@@ -762,5 +758,777 @@
     "169":
     {
         "correspondances": ["400"]
+    },
+    "379":
+    {
+        "correspondances": ["139"]
+    },
+    "39":
+    {
+        "correspondances": ["396"]
+    },
+    "368":
+    {
+        "correspondances": ["142", "105"]
+    },
+    "194":
+    {
+        "correspondances": ["142", "105"]
+    },
+    "215":
+    {
+        "correspondances": ["142", "105"]
+    },
+    "142":
+    {
+        "correspondances": ["396"]
+    },
+    "389":
+    {
+        "correspondances": ["289", "112"]
+    },
+    "289":
+    {
+        "correspondances": ["396"]
+    },
+    "112":
+    {
+        "correspondances": ["142", "105"]
+    },
+    "98":
+    {
+        "correspondances": ["358"]
+    },
+    "324":
+    {
+        "correspondances": ["358"]
+    },
+    "26":
+    {
+        "correspondances": ["371"]
+    },
+    "133":
+    {
+        "correspondances": ["52"]
+    },
+    "238":
+    {
+        "correspondances": ["70", "180", "329"]
+    },
+    "191":
+    {
+        "correspondances": ["308", "392", "46"]
+    },
+    "332":
+    {
+        "correspondances": ["329", "4"]
+    },
+    "291":
+    {
+        "correspondances": ["315", "52", "227"]
+    },
+    "315":
+    {
+        "correspondances": ["306", "291"]
+    },
+    "306":
+    {
+        "correspondances": ["291"]
+    },
+    "227":
+    {
+        "correspondances": ["131", "291", "100", "20"]
+    },
+    "131":
+    {
+        "correspondances": ["291"]
+    },
+    "100":
+    {
+        "correspondances": ["346", "91"]
+    },
+    "346":
+    {
+        "correspondances": ["131"]
+    },
+    "91":
+    {
+        "correspondances": ["131", "20"]
+    },
+    "20":
+    {
+        "correspondances": ["376", "291"]
+    },
+    "376":
+    {
+        "correspondances": ["291"]
+    },
+    "60":
+    {
+        "correspondances": ["48"]
+    },
+    "277":
+    {
+        "correspondances": ["146", "366", "11"]
+    },
+    "146":
+    {
+        "correspondances": ["366", "11"]
+    },
+    "11":
+    {
+        "correspondances": ["366", "250"]
+    },
+    "250":
+    {
+        "correspondances": ["366"]
+    },
+    "254":
+    {
+        "correspondances": ["352", "333", "279", "380"]
+    },
+    "352":
+    {
+        "correspondances": ["74", "279"]
+    },
+    "74":
+    {
+        "correspondances": ["279", "118"]
+    },
+    "118":
+    {
+        "correspondances": []
+    },
+    "279":
+    {
+        "correspondances": ["380", "17", "333"]
+    },
+    "17":
+    {
+        "correspondances": ["380", "144", "327"]
+    },
+    "144":
+    {
+        "correspondances": ["101", "217"]
+    },
+    "101":
+    {
+        "correspondances": ["327"]
+    },
+    "217":
+    {
+        "correspondances": ["118"]
+    },
+    "333":
+    {
+        "correspondances": ["327", "380", "224"]
+    },
+    "224":
+    {
+        "correspondances": ["118"]
+    },
+    "327":
+    {
+        "correspondances": ["380"]
+    },
+    "330":
+    {
+        "correspondances": ["81"]
+    },
+    "95":
+    {
+        "correspondances": ["205"]
+    },
+    "271":
+    {
+        "correspondances": ["336", "214"]
+    },
+    "336":
+    {
+        "correspondances": ["66", "172", "249"]
+    },
+    "66":
+    {
+        "correspondances": ["104", "99"]
+    },
+    "172":
+    {
+        "correspondances": ["249", "141", "165"]
+    },
+    "141":
+    {
+        "correspondances": ["66", "111"]
+    },
+    "111":
+    {
+        "correspondances": ["249"]
+    },
+    "249":
+    {
+        "correspondances": ["66", "304"]
+    },
+    "304":
+    {
+        "correspondances": ["66", "203"]
+    },
+    "203":
+    {
+        "correspondances": ["38", "66"]
+    },
+    "165":
+    {
+        "correspondances": ["141", "66", "249"]
+    },
+    "38":
+    {
+        "correspondances": ["66"]
+    },
+    "66":
+    {
+        "correspondances": ["104", "99"]
+    },
+    "99":
+    {
+        "correspondances": ["383"]
+    },
+    "383":
+    {
+        "correspondances": ["80", "264", "129"]
+    },
+    "80":
+    {
+        "correspondances": ["129", "123", "195", "140"]
+    },
+    "123":
+    {
+        "correspondances": ["184", "164", "140"]
+    },
+    "164":
+    {
+        "correspondances": ["129", "236"]
+    },
+    "236":
+    {
+        "correspondances": ["395"]
+    },
+    "395":
+    {
+        "correspondances": ["322", "34"]
+    },
+    "322":
+    {
+        "correspondances": ["96"]
+    },
+    "96":
+    {
+        "correspondances": ["374"]
+    },
+    "374":
+    {
+        "correspondances": ["207"]
+    },
+    "207":
+    {
+        "correspondances": ["83", "154"]
+    },
+    "34":
+    {
+        "correspondances": ["96"]
+    },
+    "264":
+    {
+        "correspondances": ["80", "129"]
+    },
+    "195":
+    {
+        "correspondances": ["140", "164", "9"]
+    },
+    "9":
+    {
+        "correspondances": ["34", "322"]
+    },
+    "140":
+    {
+        "correspondances": ["395"]
+    },
+    "184":
+    {
+        "correspondances": ["322", "34"]
+    },
+    "83":
+    {
+        "correspondances": ["360", "154"]
+    },
+    "360":
+    {
+        "correspondances": ["89"]
+    },
+    "154":
+    {
+        "correspondances": ["41"]
+    },
+    "41":
+    {
+        "correspondances": ["310"]
+    },
+    "310":
+    {
+        "correspondances": ["211"]
+    },
+    "211":
+    {
+        "correspondances": ["173", "360"]
+    },
+    "173":
+    {
+        "correspondances": ["24", "135", "360"]
+    },
+    "24":
+    {
+        "correspondances": ["360", "135"]
+    },
+    "135":
+    {
+        "correspondances": ["360"]
+    },
+    "129":
+    {
+        "correspondances": ["104"]
+    },
+    "209":
+    {
+        "correspondances": ["158", "47"]
+    },
+    "47":
+    {
+        "correspondances": ["158", "298"]
+    },
+    "298":
+    {
+        "correspondances": ["86", "7"]
+    },
+    "86":
+    {
+        "correspondances": ["259", "350"]
+    },
+    "259":
+    {
+        "correspondances": ["7"]
+    },
+    "350":
+    {
+        "correspondances": ["7"]
+    },
+    "158":
+    {
+        "correspondances": ["218"]
+    },
+    "272":
+    {
+        "correspondances": ["7"]
+    },
+    "316":
+    {
+        "correspondances": ["151", "218"]
+    },
+    "151":
+    {
+        "correspondances": ["218", "86", "158"]
+    },
+    "386":
+    {
+        "correspondances": ["55", "166"]
+    },
+    "55":
+    {
+        "correspondances": ["7", "166"]
+    },
+    "166":
+    {
+        "correspondances": ["218", "158"]
+    },
+    "235":
+    {
+        "correspondances": ["176", "5"]
+    },
+    "176":
+    {
+        "correspondances": ["270", "375"]
+    },
+    "270":
+    {
+        "correspondances": ["61", "394", "375"]
+    },
+    "394":
+    {
+        "correspondances": ["232"]
+    },
+    "232":
+    {
+        "correspondances": ["375"]
+    },
+    "61":
+    {
+        "correspondances": ["29", "375"]
+    },
+    "29":
+    {
+        "correspondances": ["375"]
+    },
+    "375":
+    {
+        "correspondances": ["5"]
+    },
+    "5":
+    {
+        "correspondances": ["97", "292"]
+    },
+    "97":
+    {
+        "correspondances": ["334", "247", "292"]
+    },
+    "334":
+    {
+        "correspondances": ["292"]
+    },
+    "247":
+    {
+        "correspondances": ["292"]
+    },
+    "292":
+    {
+        "correspondances": ["239", "40"]
+    },
+    "239":
+    {
+        "correspondances": ["88", "149"]
+    },
+    "149":
+    {
+        "correspondances": ["181", "265", "355"]
+    },
+    "181":
+    {
+        "correspondances": ["355", "265"]
+    },
+    "265":
+    {
+        "correspondances": ["88"]
+    },
+    "355":
+    {
+        "correspondances": ["181", "265"]
+    },
+    "40":
+    {
+        "correspondances": ["181", "265", "355"]
+    },
+    "88":
+    {
+        "correspondances": ["216", "384"]
+    },
+    "216":
+    {
+        "correspondances": ["384"]
+    },
+    "384":
+    {
+        "correspondances": ["262", "307"]
+    },
+    "307":
+    {
+        "correspondances": ["134", "87"]
+    },
+    "134":
+    {
+        "correspondances": ["202", "325", "87"]
+    },
+    "202":
+    {
+        "correspondances": ["87"]
+    },
+    "325":
+    {
+        "correspondances": ["87"]
+    },
+    "87":
+    {
+        "correspondances": ["262"]
+    },
+    "262":
+    {
+        "correspondances": ["199", "251"]
+    },
+    "199":
+    {
+        "correspondances": ["283"]
+    },
+    "283":
+    {
+        "correspondances": ["251"]
+    },
+    "251":
+    {
+        "correspondances": ["344", "399"]
+    },
+    "344":
+    {
+        "correspondances": ["56", "153"]
+    },
+    "56":
+    {
+        "correspondances": ["399"]
+    },
+    "399":
+    {
+        "correspondances": ["218"]
+    },
+    "153":
+    {
+        "correspondances": ["399"]
+    },
+    "210":
+    {
+        "correspondances": ["225", "357"]
+    },
+    "225":
+    {
+        "correspondances": ["77", "63"]
+    },
+    "77":
+    {
+        "correspondances": ["345", "18"]
+    },
+    "345":
+    {
+        "correspondances": ["381", "311"]
+    },
+    "381":
+    {
+        "correspondances": ["84", "280"]
+    },
+    "84":
+    {
+        "correspondances": ["204", "280", "377"]
+    },
+    "204":
+    {
+        "correspondances": ["130", "280", "377"]
+    },
+    "130":
+    {
+        "correspondances": ["280"]
+    },
+    "377":
+    {
+        "correspondances": ["196"]
+    },
+    "196":
+    {
+        "correspondances": ["280"]
+    },
+    "280":
+    {
+        "correspondances": ["311"]
+    },
+    "311":
+    {
+        "correspondances": ["305", "178", "108"]
+    },
+    "178":
+    {
+        "correspondances": ["162"]
+    },
+    "108":
+    {
+        "correspondances": ["185"]
+    },
+    "305":
+    {
+        "correspondances": ["162", "108"]
+    },
+    "185":
+    {
+        "correspondances": ["162"]
+    },
+    "162":
+    {
+        "correspondances": ["23", "69"]
+    },
+    "23":
+    {
+        "correspondances": ["326", "229"]
+    },
+    "326":
+    {
+        "correspondances": ["35", "229"]
+    },
+    "35":
+    {
+        "correspondances": ["136", "361"]
+    },
+    "361":
+    {
+        "correspondances": ["136"]
+    },
+    "136":
+    {
+        "correspondances": ["229"]
+    },
+    "229":
+    {
+        "correspondances": ["69"]
+    },
+    "69":
+    {
+        "correspondances": ["244"]
+    },
+    "244":
+    {
+        "correspondances": ["143", "399"]
+    },
+    "143":
+    {
+        "correspondances": ["44", "399"]
+    },
+    "44":
+    {
+        "correspondances": ["399"]
+    },
+    "18":
+    {
+        "correspondances": ["261", "348"]
+    },
+    "348":
+    {
+        "correspondances": ["331", "51"]
+    },
+    "331":
+    {
+        "correspondances": ["287"]
+    },
+    "51":
+    {
+        "correspondances": ["287"]
+    },
+    "287":
+    {
+        "correspondances": ["32", "309"]
+    },
+    "32":
+    {
+        "correspondances": ["124"]
+    },
+    "309":
+    {
+        "correspondances": ["124"]
+    },
+    "124":
+    {
+        "correspondances": ["138", "76"]
+    },
+    "76":
+    {
+        "correspondances": ["244"]
+    },
+    "138":
+    {
+        "correspondances": ["163", "351"]
+    },
+    "351":
+    {
+        "correspondances": ["76"]
+    },
+    "163":
+    {
+        "correspondances": ["28", "351"]
+    },
+    "28":
+    {
+        "correspondances": ["351"]
+    },
+    "261":
+    {
+        "correspondances": ["345"]
+    },
+    "63":
+    {
+        "correspondances": ["281", "10"]
+    },
+    "10":
+    {
+        "correspondances": ["77"]
+    },
+    "281":
+    {
+        "correspondances": ["10"]
+    },
+    "357":
+    {
+        "correspondances": ["269", "57"]
+    },
+    "269":
+    {
+        "correspondances": ["225"]
+    },
+    "57":
+    {
+        "correspondances": ["16", "2", "119"]
+    },
+    "2":
+    {
+        "correspondances": ["16", "269"]
+    },
+    "119":
+    {
+        "correspondances": ["269"]
+    },
+    "16":
+    {
+        "correspondances": ["50", "269"]
+    },
+    "50":
+    {
+        "correspondances": ["269"]
+    },
+    "370":
+    {
+        "correspondances": ["42", "116"]
+    },
+    "116":
+    {
+        "correspondances": ["378", "42"]
+    },
+    "378":
+    {
+        "correspondances": ["296", "42"]
+    },
+    "296":
+    {
+        "correspondances": ["42"]
+    },
+    "320":
+    {
+        "correspondances": ["363"]
+    },
+    "248":
+    {
+        "correspondances": ["301"]
+    },
+    "278":
+    {
+        "correspondances": ["156", "92"]
+    },
+    "92":
+    {
+        "correspondances": ["71"]
+    },
+    "156":
+    {
+        "correspondances": ["343", "92"]
+    },
+    "343":
+    {
+        "correspondances": ["92"]
     }
 }
