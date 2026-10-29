@@ -1,0 +1,174 @@
+{
+    "1":
+    {
+        "correspondances": ["2"]
+    },
+    "2":
+    {
+        "correspondances": ["28", "25"]
+    },
+    "3":
+    {
+        "correspondances": ["29"]
+    },
+    "4":
+    {
+        "correspondances": ["14", "31"]
+    },
+    "5":
+    {
+        "correspondances": ["23", "12"]
+    },
+    "6":
+    {
+        "correspondances": ["12"]
+    },
+    "7":
+    {
+        "correspondances": ["13", "19"]
+    },
+    "8":
+    {
+        "correspondances": ["47"]
+    },
+    "9":
+    {
+        "correspondances": ["43"]
+    },
+    "10":
+    {
+        "correspondances": ["18", "19"]
+    },
+    "11":
+    {
+        "correspondances": ["34"]
+    },
+    "12":
+    {
+        "correspondances": ["37"]
+    },
+    "13":
+    {
+        "correspondances": ["42", "32"]
+    },
+    "14":
+    {
+        "correspondances": []
+    },
+    "15":
+    {
+        "correspondances": ["34", "25"]
+    },
+    "16":
+    {
+        "correspondances": ["14", "40"]
+    },
+    "17":
+    {
+        "correspondances": ["26", "10"]
+    },
+    "18":
+    {
+        "correspondances": []
+    },
+    "19":
+    {
+        "correspondances": ["33"]
+    },
+    "20":
+    {
+        "correspondances": ["17", "14"]
+    },
+    "21":
+    {
+        "correspondances": ["43", "24"]
+    },
+    "22":
+    {
+        "correspondances": ["47"]
+    },
+    "23":
+    {
+        "correspondances": ["8", "6"]
+    },
+    "24":
+    {
+        "correspondances": ["41", "36"]
+    },
+    "25":
+    {
+        "correspondances": ["29", "39"]
+    },
+    "26":
+    {
+        "correspondances": ["7", "40"]
+    },
+    "27":
+    {
+        "correspondances": []
+    },
+    "28":
+    {
+        "correspondances": ["3", "15"]
+    },
+    "29":
+    {
+        "correspondances": ["4", "35"]
+    },
+    "30":
+    {
+        "correspondances": ["22"]
+    },
+    "31":
+    {
+        "correspondances": ["5"]
+    },
+    "32":
+    {
+        "correspondances": ["9", "21"]
+    },
+    "33":
+    {
+        "correspondances": ["47"]
+    },
+    "34":
+    {
+        "correspondances": ["38", "20"]
+    },
+    "35":
+    {
+        "correspondances": ["14"]
+    },
+    "36":
+    {
+        "correspondances": ["43"]
+    },
+    "37":
+    {
+        "correspondances": ["47"]
+    },
+    "38":
+    {
+        "correspondances": ["16"]
+    },
+    "39":
+    {
+        "correspondances": ["29", "11"]
+    },
+    "40":
+    {
+        "correspondances": ["18", "19"]
+    },
+    "41":
+    {
+        "correspondances": ["18", "30"]
+    },
+    "42":
+    {
+        "correspondances": ["27"]
+    },
+    "43":
+    {
+        "correspondances": []
+    }
+}
